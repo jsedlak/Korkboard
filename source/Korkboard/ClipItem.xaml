@@ -1,0 +1,37 @@
+﻿<UserControl 
+    x:Class="Korkboard.ClipItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:js="clr-namespace:Korkboard"
+    xmlns:jsc="clr-namespace:Korkboard.Controls"
+    mc:Ignorable="d" 
+    x:Name="ClipItemRootLayout"
+    Margin="5"
+    MaxHeight="300"
+    d:DesignHeight="300" d:DesignWidth="300" Cursor="Hand">
+    <UserControl.Effect>
+        <DropShadowEffect BlurRadius="20"/>
+    </UserControl.Effect>
+    <!--<UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=ClipItemLayoutRoot, Path=IsSelected}" Value="true">
+                    <Setter Property="Control.Background" Value="#FFFFFF"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="26"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <js:ImageToggleButton x:Name="PinButton" Clicked="PinButton_Clicked" Grid.Column="0" Margin="5" SelectedImage="Icons/pin_on.png" Image="Icons/pin_off.png" Width="16" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" BitmapEffect="{x:Null}"/>
+        
+        
+        <Border x:Name="RootBorder" Background="Transparent" Grid.Column="1"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Korkboard.Controls.BasicOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cork="clr-namespace:Korkboard"
+             Background="{StaticResource PanelBackground}"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <cork:IntToStringConverter x:Key="IntegerConverter"/>
+    </UserControl.Resources>
+    <StackPanel Margin="5">
+        <CheckBox Margin="5" Content="Always On Top" IsChecked="{Binding Path=AlwaysOnTop, Mode=TwoWay, TargetNullValue=false}" IsThreeState="False"/>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Item Time Limit:" Margin="5" VerticalAlignment="Center"/>
+            <TextBox x:Name="TimeLimitBox" Margin="5" Grid.Column="1" Text="{Binding Path=TimeLimitInMinutes, Mode=TwoWay, Converter={StaticResource IntegerConverter}}"/>
+            <TextBlock Text="(minutes)" Grid.Column="2" Margin="5" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Item Limit:" Margin="5" VerticalAlignment="Center"/>
+            <TextBox x:Name="ItemLimitBox" Margin="5" Grid.Column="1" Text="{Binding Path=ItemNumberLimit, Mode=TwoWay, Converter={StaticResource IntegerConverter}}"/>
+        </Grid>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <CheckBox x:Name="EnableTextCopy" Margin="5" VerticalAlignment="Center" Grid.Row="0" Content="Enable Text Copy" IsChecked="{Binding Path=IsTextCopyEnabled, Mode=TwoWay}"/>
+            <CheckBox x:Name="EnableFileCopy" Margin="5" VerticalAlignment="Center" Grid.Row="1" Content="Enable File Copy" IsChecked="{Binding Path=IsFileCopyEnabled, Mode=TwoWay}"/>
+            <CheckBox x:Name="EnableImageCopy" Margin="5" VerticalAlignment="Center" Grid.Row="2" Content="Enable Image Copy" IsChecked="{Binding Path=IsImageCopyEnabled, Mode=TwoWay}"/>
+        </Grid>
+        
+        <Grid>
+            <Button x:Name="OpenDataFolderButton" Margin="5" Width="100" HorizontalAlignment="Left" Height="25" Content="Data Folder" Click="OpenDataFolderButton_Click"/>
+        </Grid>
+    </StackPanel>
+</UserControl>
