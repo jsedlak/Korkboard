@@ -11,9 +11,9 @@
     Margin="5"
     MaxHeight="300"
     d:DesignHeight="300" d:DesignWidth="300" Cursor="Hand">
-    <UserControl.Effect>
+    <!--<UserControl.Effect>
         <DropShadowEffect BlurRadius="20"/>
-    </UserControl.Effect>
+    </UserControl.Effect>-->
     <!--<UserControl.Style>
         <Style>
             <Style.Triggers>

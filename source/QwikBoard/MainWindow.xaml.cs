@@ -26,7 +26,7 @@ namespace Korkboard
             (
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "John Sedlak",
-                "Korkboard",
+                "QwikBoard",
                 Assembly.GetExecutingAssembly().GetName().Version.ToString()
             );
         }
@@ -121,6 +121,7 @@ namespace Korkboard
         {
             base.OnPropertyChanged(e);
 
+            /*
             if (e.Property == Window.WindowStateProperty)
             {
                 switch (WindowState)
@@ -133,6 +134,7 @@ namespace Korkboard
                         break;
                 }
             }
+            */
         }
 
         protected ClipItem GetItemForData(IDataObject data)
@@ -173,14 +175,17 @@ namespace Korkboard
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.OriginalSource != this && e.OriginalSource != LayoutRoot && e.OriginalSource != TitleBlock) return;
+            if (e.OriginalSource != this && e.OriginalSource != LayoutRoot)
+            {
+                return;
+            }
 
-            if (WindowState == WindowState.Maximized)
+            /*if (WindowState == WindowState.Maximized)
             {
                 WindowState = WindowState.Normal;
                 Left = e.MouseDevice.GetPosition(this).X;
                 Top = e.MouseDevice.GetPosition(this).Y;
-            }
+            }*/
 
             DragMove();
 

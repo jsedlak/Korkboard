@@ -24,9 +24,12 @@ namespace Korkboard
         public static DependencyProperty IsPinnedProperty = DependencyProperty.Register("IsPinned", typeof(bool), typeof(ClipItem));
         public static DependencyProperty TimeStampProperty = DependencyProperty.Register("TimeStamp", typeof(DateTime), typeof(ClipItem));
 
-        public static Brush UnselectedBrush = new SolidColorBrush(Color.FromArgb(255, 255, 245, 104));
-        public static Brush SelectedBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-        public static Brush HoverBrush = new SolidColorBrush(Color.FromArgb(100, 255, 245, 104));
+        public static Brush UnselectedForegroundBrush = new SolidColorBrush(Color.FromArgb(255, 30, 30, 30));
+        public static Brush SelectedForegroundBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+
+        public static Brush UnselectedBrush = new SolidColorBrush(Color.FromArgb(255, 240, 240, 240));
+        public static Brush SelectedBrush = new SolidColorBrush(Color.FromArgb(255, 46, 9, 39));
+        public static Brush HoverBrush = new SolidColorBrush(Color.FromArgb(255, 5, 143, 135));
 
         public const string BitmapSourceFormat = "System.Windows.Media.Imaging.BitmapSource";
         public const string FileList = "Shell IDList Array";
@@ -34,6 +37,7 @@ namespace Korkboard
         public event EventHandler IsPinnedChanged;
 
         private Brush oldBrush;
+        private readonly List<TextBlock> _blocks = new List<TextBlock>();
 
         public ClipItem()
         {
@@ -79,11 +83,17 @@ namespace Korkboard
             string[] formats = data.GetFormats(true);
 
             if (formats.Contains(DataFormats.Text))
+            {
                 return DataFormats.Text;
+            }
             else if (formats.Contains(BitmapSourceFormat))
+            {
                 return BitmapSourceFormat;
+            }
             else if (formats.Contains(FileList))
+            {
                 return FileList;
+            }
 
             return null;
         }
@@ -99,7 +109,9 @@ namespace Korkboard
                     TextBlock tb = new TextBlock();
                     tb.Margin = new Thickness(10);
                     tb.Text = textData;
-                    tb.Foreground = new SolidColorBrush(Colors.Black);
+                    tb.Foreground = UnselectedForegroundBrush;
+
+                    _blocks.Add(tb);
 
                     RootBorder.Child = tb;
                     //AddVisualChild(tb);
@@ -130,7 +142,9 @@ namespace Korkboard
                     TextBlock txb = new TextBlock();
                     txb.Margin = new Thickness(10);
                     txb.Text = output;
-                    txb.Foreground = new SolidColorBrush(Colors.Black);
+                    txb.Foreground = UnselectedForegroundBrush;
+
+                    _blocks.Add(txb);
 
                     RootBorder.Child = txb;
                     //AddVisualChild(tb);
@@ -199,8 +213,17 @@ namespace Korkboard
             {
                 SetValue(IsSelectedProperty, value);
 
-                if (value) Background = SelectedBrush;
-                else Background = UnselectedBrush;
+                if (value)
+                {
+                    Background = SelectedBrush;
+                    _blocks.ForEach(m => m.Foreground = SelectedForegroundBrush);
+
+                }
+                else
+                {
+                    Background = UnselectedBrush;
+                    _blocks.ForEach(m => m.Foreground = UnselectedForegroundBrush);
+                }
             }
         }
     }

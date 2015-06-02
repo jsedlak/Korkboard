@@ -18,7 +18,7 @@
             
             <TreeView x:Name="OptionsList" Grid.Column="0" Margin="5,5,0,5" SelectedItemChanged="TreeView_SelectedItemChanged">
                 <TreeViewItem Header="Basic" Tag="Korkboard.Controls.BasicOptions"/>
-                <TreeViewItem Header="About Korkboard" Tag="Korkboard.Controls.About"/>
+                <TreeViewItem Header="About QwikBoard" Tag="Korkboard.Controls.About"/>
             </TreeView>
             
             <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" ResizeDirection="Columns" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent"/>

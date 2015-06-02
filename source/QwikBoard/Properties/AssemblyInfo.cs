@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Korkboard")]
+[assembly: AssemblyTitle("QwikBoard")]
 [assembly: AssemblyDescription("Manages multiple clipboard items in a Korkboard like fashion.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("John Sedlak")]
-[assembly: AssemblyProduct("Korkboard")]
-[assembly: AssemblyCopyright("Copyright ©2010 John Sedlak")]
+[assembly: AssemblyProduct("QwikBoard")]
+[assembly: AssemblyCopyright("©2015 John Sedlak")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

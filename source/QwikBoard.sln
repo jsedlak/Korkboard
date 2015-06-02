@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Korkboard", "Korkboard\Korkboard.csproj", "{63817DAC-3680-444C-8400-8D737430723D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QwikBoard", "QwikBoard\QwikBoard.csproj", "{63817DAC-3680-444C-8400-8D737430723D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

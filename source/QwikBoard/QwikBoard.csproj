@@ -8,8 +8,8 @@
     <ProjectGuid>{63817DAC-3680-444C-8400-8D737430723D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Korkboard</RootNamespace>
-    <AssemblyName>Korkboard</AssemblyName>
+    <RootNamespace>QwikBoard</RootNamespace>
+    <AssemblyName>QwikBoard</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -61,16 +61,16 @@
     <ApplicationIcon>clipboard.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>43F56C3874D591BF9C8E1BBC2C7DD138802E2650</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>22857232E86B948643905E0E2F26C5EAE0B1B15B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Korkboard_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Korkboard_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FocusedGames">
@@ -177,7 +177,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Korkboard_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
